@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% include 'cdinlines.html' %}
+</head>
+<style>
+    .jumbotron{
+        margin: 10%;
+        background-color: aquamarine;
+    }
+
+    a{
+        margin-right: 100px;
+        margin-top: 20px;
+    }
+    body{
+        background-color: chocolate;
+    }
+</style>
+<body>
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-12">
+            <div class="jumbotron text-center">
+                <a class="btn btn-lg btn-success"href="{% url 'hyd' %}">HYD</a>
+                <a class="btn  btn-lg btn-primary"href="{% url 'chennai' %}">CHENNAI</a>
+                <a class="btn  btn-lg btn-secondary" href="{% url 'bengaluru' %}">BENGALURU</h1>
+                <a class="btn btn-lg btn-warning" href="{% url 'bhubaneswar' %}">BBSR</a>
+            </div>
+          </div>
+      </div>
+
+  </div>
+</body>
+</html>

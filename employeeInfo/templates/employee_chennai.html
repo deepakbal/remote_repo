@@ -1,0 +1,65 @@
+{% load static %}
+<html>
+<head>
+    <title>Employee Data</title>
+{% include 'cdinlines.html' %}
+</head>
+
+<body>
+{% include 'navbar.html' %}
+ <h1 class="text-center"> Chennai Employees Details</h1>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4">
+            <img src="{% static 'images/CHENNAI .jpg' %}" style="width: 100%;height: 50%;border-radius: 50%" class="img-thumbnail">
+        </div>
+        <div class="col-md-4">
+            <img src="{% static 'images/chennai_food.jpg' %}" style="width: 100%;height: 50%;border-radius: 50%" class="img-thumbnail">
+        </div>
+        <div class="col-md-4">
+            <img src="{% static 'images/csk.png' %}" style="width:100%;height: 50%;border-radius: 50%" class="img-thumbnail">
+        </div>
+    </div>
+</div>
+<div class="container-fluid"  style="margin-top:-500px">
+    <div class="row">
+        <div class="col-md-12">
+            {% if employees %}
+
+                <table class="table table-bordered text-center">
+                   <thead class="bg bg-success text-white">
+                   <tr>
+                       <th>FIRST NAME</th>
+                       <th>LAST NAME</th>
+                       <th>EMAIL</th>
+                       <th>JOB</th>
+                       <th>SALARY</th>
+                       <th>COMPANY</th>
+                       <th>LOCATION</th>
+                       <th>ADDRESS</th>
+                   </tr>
+                   </thead>
+                   <tbody>
+                     {% for employee in employees %}
+                       <tr>
+                           <td>{{ employee.first_name }}</td>
+                           <td>{{ employee.last_name }}</td>
+                           <td>{{ employee.email }}</td>
+                           <td>{{ employee.job }}</td>
+                           <td>{{ employee.salary }}</td>
+                           <td>{{ employee.company }}</td>
+                           <td>{{ employee.location }}</td>
+                           <td>{{ employee.address }}</td>
+                       </tr>
+
+                     {% endfor %}
+                   </tbody>
+                </table>
+            {% endif %}
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
